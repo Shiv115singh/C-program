@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+    float farranheeait,celsius;
+    printf("Enter the temperatutr value in  farranheeait: ");
+    scanf("%f",&farranheeait);
+    celsius=(0.56)*(farranheeait-32);
+    printf("the temperatutr value in  farranheeait: %f",farranheeait);
+    printf("\nthe temperatutr value in  farranheeait: %f",celsius);
+    return 0;
+}
