@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int num,digit_at_onces_place;
+    printf("Enter the number: ");
+    scanf("%d",&num);
+    digit_at_onces_place=num%10;
+    printf("the digit at onces place of %d is %d",num,digit_at_onces_place);
+    return 0;
+}
