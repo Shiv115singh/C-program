@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define min1 150001
+#define max1 300000
+#define tax_per1 0.10
+#define min2 300001
+#define max2 500000
+#define tax_per2 0.20
+#define min3 500001
+#define tax_per3 0.30
+int main(){
+    double income, Taxable_income ,tax;
+    printf("Enter the salary: ");
+    scanf("%lf",&income);
+    Taxable_income=income-150000;
+    if(Taxable_income<=0){
+        printf("No Tax");
+    }else if(Taxable_income>=min1 && Taxable_income <=max1){
+        tax=(Taxable_income-min1)*tax_per1;
+    }else if(Taxable_income>=min2 && Taxable_income <=max2){
+        tax=(Taxable_income-min3)*tax_per2;
+    }else if(Taxable_income>=min3 ){
+        tax=(Taxable_income-min3)*tax_per3;
+    }
+    printf("\nTax: %0.2f",tax);
+    return 0;
+}
