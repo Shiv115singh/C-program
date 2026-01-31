@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<ctype.h>
+int main(){
+    char ch;
+    printf("\n Press any key : ");
+    scanf("%c",&ch);
+    if(isalpha(ch)>0){
+        printf("\nThe user has entered a character ");
+    }else if(isdigit(ch)>0){
+        printf("\nThe user has entered a digits ");
+    }else if(isprint(ch)>0){
+        printf("\nThe user has entered a printable character ");
+    }else if(ispunct(ch)>0){
+        printf("\nThe user has entered a punctuation mark ");
+    }else if(isspace(ch)>0){
+        printf("\nThe user has entered a space character ");
+    }
+    return 0;
+}
