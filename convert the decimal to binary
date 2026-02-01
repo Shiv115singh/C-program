@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int num,binary=0,rem,i=0;
+    printf("Enter any number: ");
+    scanf("%d",&num);
+    while(num!=0){
+        rem=num%2;
+        binary+=rem*pow(10,i);
+        i++;
+        num=num/2;
+    }
+    printf("Binary value: %d",binary);
+    return 0;
+}
