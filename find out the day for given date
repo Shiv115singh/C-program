@@ -1,0 +1,89 @@
+#include<stdio.h>
+int main(){
+    int year,month,date,country_table,month_table,day_table,day,last_two_decimal_year,YY;
+    printf("Enter the date,month,year : ");
+    scanf("%d %d %d",&date,&month,&year);
+    
+    //Countrys table 
+    if(year>=1700 && year<=1799){
+        country_table=4;
+    }else if(year>=1800 && year<=1899){
+        country_table=2;
+    }else if(year>=1900 && year<=1999){
+        country_table=0;
+    }else if(year>=2000 && year<=2099){
+        country_table=6;
+    }else if(year>=2100 && year<=2199){
+        country_table=4;
+    }else if(year>=2200 && year<=2299){
+        country_table=2;
+    }else if(year>=2300 && year<=2399){
+        country_table=0;
+    }else if(year>=2400 && year<=2499){
+        country_table=6;
+    }else if(year>=2500 && year<=2599){
+        country_table=4;
+    }else if(year>=2600 && year<=2699){
+        country_table=2;
+    }
+    last_two_decimal_year=year%100;
+    YY=last_two_decimal_year/4;
+    
+    //Months table
+    
+    switch(month){
+        case 1:
+        case 10:
+        month_table =1;
+        break;
+        case 2:
+        case 3:
+        case 11:
+        month_table =4;
+        break;
+        case 4:
+        case 7:
+        month_table =0;
+        break;
+        case 5:
+        month_table=2;
+        break;
+        case 6:
+        month_table=5;
+        break;
+        case 8:
+        month_table=3;
+        break;
+        case 9:
+        case 12:
+        month_table=6;
+        break;
+    }
+    day=(country_table+last_two_decimal_year+YY+month_table+date)%7;
+    //Day table
+    
+    switch(day){
+        case 1:
+        printf("\n Sunday");
+        break;
+        case 2:
+        printf("\n Monday");
+        break;
+        case 3:
+        printf("\n Tuesday");
+        break;
+        case 4:
+        printf("\n Wednesday");
+        break;
+        case 5:
+        printf("\n Thursday");
+        break;
+        case 6:
+        printf("\n Friday");
+        break;
+        case 7:
+        printf("\n Saturday");
+        break;
+    }
+    return 0;
+}
