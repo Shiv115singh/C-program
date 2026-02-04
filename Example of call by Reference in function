@@ -1,0 +1,15 @@
+#include<stdio.h>
+void sum(int *a);
+int main(){
+    int num;
+    printf("\nEnter a number: ");
+    scanf("%d",&num);
+    printf("\nThe value of num before calling the function: %d",num);
+    sum(&num);
+    printf("\nThe value of num before calling the function  %d",num);
+    return 0;
+}
+void sum(int *a){
+    *a=*a+10;
+    printf("\nThe value of num in the called function: %d",*a);
+}
