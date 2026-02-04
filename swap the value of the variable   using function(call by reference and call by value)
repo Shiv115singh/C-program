@@ -1,0 +1,37 @@
+#include<stdio.h>
+void swap_call_by_val(int,int);
+void swap_call_by_ref(int*,int*);
+int main(){
+    int num1,num2,num3,num4;
+    printf("\nEnter the 1st Number value: ");
+    scanf("%d",&num1);
+    printf("\nEnter the 2nd Number value: ");
+    scanf("%d",&num2);
+    printf("\nEnter the 3rd Number value: ");
+    scanf("%d",&num3);
+    printf("\nEnter the 4th Number value: ");
+    scanf("%d",&num4);
+    printf("\nIn main(), 1st number = %d  and 2nd number =%d ",num1,num2);
+    swap_call_by_val(num1,num2);
+    printf("\nIn main(), 1st number = %d  and 2nd number =%d ",num1,num2);
+    //Call by reference 
+    printf("\nIn main(), 3st number = %d  and 4nd number =%d ",num3,num4);
+    swap_call_by_ref(&num3,&num4);
+    printf("\nIn main(), 1st number = %d  and 2nd number =%d ",num3,num4);
+    
+    return 0;
+}
+void swap_call_by_val(int a,int b){
+    int temp;
+    temp=a;
+    b=a;
+    a=temp;
+    printf("\nIn function (call by value method) 1st number = %d and 2nd number =%d",a,b);
+}
+void swap_call_by_ref(int* a,int* b){
+    
+    (*a)=(*a)+(*b);
+    (*b)=(*a)-(*b);
+    (*a)=(*a)-(*b);
+    printf("\nIn function (call by reference method) 3st number = %d and 4nd number =%d",*a,*b);
+}
