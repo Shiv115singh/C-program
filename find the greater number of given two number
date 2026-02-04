@@ -1,0 +1,20 @@
+#include<stdio.h>
+void check_Relation(int a, int b);
+int main(){
+    int num1, num2;
+    printf("\nEnter the first number: ");
+    scanf("%d",&num1);
+    printf("\nEnter the second number: ");
+    scanf("%d",&num2);
+    check_Relation(num1,num2);
+    return 0;
+}
+void check_Relation(int a, int b){
+    if(a<b){
+        printf("Num2 is greater then Num1");
+    }else if(a>b){
+        printf("Num1 is greater then Num2");
+    }else{
+        printf("Both Number are equal");
+    }
+}
