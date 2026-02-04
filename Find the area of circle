@@ -1,0 +1,11 @@
+#include<stdio.h>
+float cal_area(float r){
+    return(3.14*r*r);
+}
+void main(){
+  float area ,radius;
+  printf("\n Enter the radius of the circle: ");
+  scanf("%f",&radius);
+  area=cal_area(radius);
+  printf("\n Area of the circle with the radius %0.2f = %0.2f ",radius,area);
+}
