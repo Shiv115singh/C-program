@@ -1,0 +1,20 @@
+#include<stdio.h>
+int fact1(int);
+int fact2(int);
+int main(){
+    int num;
+    printf("Enter any Number: ");
+    scanf("%d",&num);
+    printf("Factorial of given number is: %d", fact1(num));
+    return 0;
+}
+int fact1(int number){
+    if(number==0){
+        return number;
+    }else{
+        return fact2(number);
+    }
+}
+int fact2(int x){
+    return fact1(x-1);
+}
