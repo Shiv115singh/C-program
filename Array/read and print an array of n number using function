@@ -1,0 +1,23 @@
+#include<stdio.h>
+void read_array(int arr[],int);
+void display_array(int arr[],int);
+int main(){
+    int num[10],n;
+    printf("\n Enter the size of the array: ");
+    scanf("%d",&n);
+    read_array(num,n);
+    display_array(num,n);
+    return 0;
+}
+void read_array(int arr[],int size){
+    for(int i=0;i<size;i++){
+        printf("arr[%d]:",i);
+        scanf("%d",&arr[i]);
+    }
+}
+void display_array(int arr[],int size){
+    printf("The array element are: ");
+    for(int i=0;i<size;i++){
+        printf("\tarr[%d]: %d",i,arr[i]);
+    }
+}
