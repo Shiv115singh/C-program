@@ -1,0 +1,32 @@
+#include<stdio.h>
+void reverse_array(int arr[],int);
+int main(){
+    int arr[20],n;
+    printf("Enter the element of array: ");
+    scanf("%d",&n);
+    printf("\n Enter the array elements : ");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Array element are : ");
+    for(int i=0;i<n;i++){
+        printf("\t%d",arr[i]);
+    }
+    printf("\n Reverse element are :");
+    reverse_array(arr,n);
+    return 0;
+}
+void reverse_array(int arr[],int n){
+    int swap;
+    int i=0,j=n-1;
+    while(i<j){
+        swap=arr[i];
+        arr[i]=arr[j];
+        arr[j]=swap;
+        i++;
+        j--;
+    }
+    for(int i=0;i<n;i++){
+        printf("\t%d",arr[i]);
+    }
+}
