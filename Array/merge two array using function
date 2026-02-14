@@ -1,0 +1,49 @@
+#include<stdio.h>
+void read_array(int arr[],int);
+void display_array(int arr[],int);
+void merge_array(int arr1[],int,int arr2[],int ,int arr3[]);
+void reverse_array(int arr[],int);
+int main(){
+    int num1[10],num2[10],n1,n2,num3[20];
+    printf("\n Enter the size of the array 1: ");
+    scanf("%d",&n1);
+    printf("\n Enter the size of the array 2: ");
+    scanf("%d",&n2);
+    
+    printf("Enter the 1st array elements ");
+    read_array(num1,n1);
+    printf("Enter the 2nd array elements ");
+    read_array(num2,n2);
+    printf("\nDisplay the 1st array elements :");
+    display_array(num1,n1);
+    printf("\nDisplay the 2nd array elements :");
+    display_array(num2,n2);
+    merge_array(num1,n1,num2,n2,num3);
+    return 0;
+}
+void read_array(int arr[],int size){
+    for(int i=0;i<size;i++){
+        printf("arr[%d]:",i);
+        scanf("%d",&arr[i]);
+    }
+}
+void display_array(int arr[],int size){
+    printf("\nThe array element are: ");
+    for(int i=0;i<size;i++){
+        printf("\tarr[%d]: %d",i,arr[i]);
+    }
+}
+void merge_array(int arr1[],int n1,int arr2[],int n2,int arr3[]){
+ int m=n1+n2,index=0;
+    for(int i=0;i<n1;i++){
+        arr3[index]=arr1[i];
+        index++;
+    }
+    for(int i=0;i<n2;i++){
+        arr3[index]=arr2[i];
+        index++;
+    }
+    
+    printf("\nAfter merge two array : ");
+    display_array(arr3,m);
+}
