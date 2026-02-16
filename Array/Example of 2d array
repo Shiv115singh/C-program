@@ -1,0 +1,44 @@
+/*In a small company ther are N salesman. Each salesman is supposed to sell M products. Write a program using two dimensional array-
+1) The total sales by each salesman 
+2) Total sales of each item */
+
+
+#include<stdio.h>
+int main(){
+    int sales_man,sales_pro;
+    printf("\nNumber of sales man: ");
+    scanf("%d",&sales_man);
+    printf("\nHow many products supposed to sell each salesman: ");
+    scanf("%d",&sales_pro);
+    int product[sales_man][sales_pro];
+    for(int i=0;i<sales_man;i++){
+        printf("\nEnter the sales of 3 items sold by saleman %d  salesman :",i+1);
+        for(int j=0;j<sales_pro;j++){
+            scanf("%d",&product[i][j]);
+        }
+    }
+    for(int i=0;i<sales_man;i++){
+        printf("\n%dth salesman sold product ",i+1);
+        for(int j=0;j<sales_pro;j++){
+            printf("\t%d",product[i][j]);
+        }
+    }
+    for(int i=0;i<sales_man;i++){
+        int total_sales=0;
+        printf("\n %dth Total sales by Salesman : ",i+1);
+        for(int j=0;j<sales_pro;j++){
+            total_sales+=product[i][j];
+        }
+        printf("%d",total_sales);
+    }
+     for(int i=0;i<sales_pro;i++){
+        int total_sales=0;
+        printf("\n %dth Total sales of the items : ",i+1);
+        for(int j=0;j<sales_man;j++){
+            total_sales+=product[j][i];
+        }
+        printf("%d",total_sales);
+    }
+    
+    return 0;
+}
