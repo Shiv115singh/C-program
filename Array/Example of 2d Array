@@ -1,0 +1,47 @@
+/*Write a program to read a 2D array marks which stores marks of 5 students and 3 subjects. Write a program to display the highest markes in each subject.*/
+#include<stdio.h> 
+int main(){ 
+    int num_stu,num_sub,Highest; 
+    printf("Enter the number of student in class: "); 
+    scanf("%d",&num_stu); 
+    if(num_stu<=0){
+        printf("Invalid input(Enter the No of student)");
+        return 0;
+    }
+    printf("Enter the num of subject: "); 
+    scanf("%d",&num_sub); 
+    if(num_sub<=0){
+        printf("Invalid input(Enter the No of subject)");
+        return 0;
+    }
+    int stu[num_stu][num_sub];
+    char sub_name[num_sub]; 
+    
+    printf("\nEnter the Subjects of the student: \n"); 
+    for(int i=0;i<num_sub;i++){ 
+        printf("Enter the %dth subject name : ",i+1); 
+        scanf(" %c",&sub_name[i]); 
+        
+    }
+    printf("\nEnter the marks of the student: \n"); 
+    for(int i=0;i<num_stu;i++){
+        printf("Enter the %dth student marks: \n",i+1); 
+        for(int j=0;j<num_sub;j++){
+            printf("%c: ",sub_name[j]); 
+            scanf("%d",&stu[i][j]); 
+            
+        } 
+        
+    } 
+    for(int i=0;i<num_sub;i++){
+        Highest=stu[0][i];
+        for(int j=1;j<num_stu;j++){
+            if(Highest<stu[j][i]){
+                Highest=stu[j][i];
+            }
+        }
+        printf("\nThe highest marks obtained int the subject %c = %d",sub_name[i],Highest);
+    }
+    
+    return 0;
+}
