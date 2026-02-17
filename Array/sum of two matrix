@@ -1,0 +1,106 @@
+/*
+#include<stdio.h>
+int main(){
+    int i,j,mat1[3][3],mat2[3][3],sum[3][3];
+    printf("Enter the elements of the matrix 1 ");
+    printf("\n************************************\n");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            scanf("%d",&mat1[i][j]);
+        }
+    }
+    printf("\nEnter the elements of the matrix 2 ");
+    printf("\n************************************\n");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            scanf("%d",&mat2[i][j]);
+        }
+    }
+    printf("\nThe Element of the matrix 1 are: ");
+    printf("\n**************************************");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",mat1[i][j]);
+        }
+    }
+     printf("\nThe Element of the matrix 2 are: ");
+    printf("\n**************************************");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",mat2[i][j]);
+        }
+    }
+    printf("\nSum of two matrix ");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            sum[i][j]=mat1[i][j]+mat2[i][j];
+            printf("%d\t",sum[i][j]);
+        }
+    }
+    return 0;
+}
+*/
+
+#include<stdio.h>
+int main(){
+    int i,j;
+    int row1,col1,row2,col2,row_sum,col_sum;
+    printf("Enter the number of rows in first matrix: ");
+    scanf("%d",&row1);
+    printf("\nEnter the number of columns in first matrix: ");
+    scanf("%d",&col1);
+    printf("\nEnter the number of rows in second matrix: ");
+    scanf("%d",&row2);
+    printf("\nEnter the number of rows in second matrix: ");
+    scanf("%d",&col2);
+    row_sum=row1;
+    col_sum=col1;
+    int mat1[row1][col1],mat2[row2][col2],sum[row_sum][col_sum];
+    if(row1 != row2 || col1 != col2){
+        printf("\n The number of rows and columns of both matrices must be equal");
+        return 0;
+    }
+    printf("\nEnter the element of first matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row1;i++){
+        for(j=0;j<col1;j++){
+            scanf("%d",&mat1[i][j]);
+        }
+    }
+    printf("\nEnter the element of second matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row2;i++){
+        for(j=0;j<col2;j++){
+            scanf("%d",&mat2[i][j]);
+        }
+    }
+    printf("\nElement of first matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row1;i++){
+        for(j=0;j<col1;j++){
+            printf("%d\t",mat1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nElement of second matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row2;i++){
+        for(j=0;j<col2;j++){
+            printf("%d\t",mat2[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nsum of two matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row_sum;i++){
+        for(j=0;j<col_sum;j++){
+            sum[i][j]=mat1[i][j]+mat2[i][j];
+            printf("%d\t",sum[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
