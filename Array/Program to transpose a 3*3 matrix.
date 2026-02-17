@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main(){
+    int i,j,mat[3][3],trans_mat[3][3];
+    printf("Enter the elements of the matrix ");
+    printf("\n************************************\n");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            scanf("%d",&mat[i][j]);
+        }
+    }
+    printf("The Element of the matrix are: ");
+    printf("\n**************************************");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",mat[i][j]);
+        }
+    }
+     for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            trans_mat[i][j]=mat[j][i];
+        }
+    }
+   /* printf("\nThe Element of the transposd matrix are: ");
+    printf("\n**************************************");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",mat[j][i]);
+        }
+    } */
+    printf("\nthe transposd matrix are: ");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",trans_mat[i][j]);
+        }
+    }
+    return 0;
+}
