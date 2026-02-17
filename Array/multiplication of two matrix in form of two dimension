@@ -1,0 +1,69 @@
+#include<stdio.h>
+int main(){
+    int i,j;
+    int row1,col1,row2,col2,row_mul,col_mul;
+    printf("Enter the number of rows in first matrix: ");
+    scanf("%d",&row1);
+    printf("\nEnter the number of columns in first matrix: ");
+    scanf("%d",&col1);
+    printf("\nEnter the number of rows in second matrix: ");
+    scanf("%d",&row2);
+    printf("\nEnter the number of rows in second matrix: ");
+    scanf("%d",&col2);
+    row_mul=row1;
+    col_mul=col2;
+    int mat1[row1][col1],mat2[row2][col2],mul[row_mul][col_mul];
+     if(col1 != row2){
+        printf("\n The number of columns in the first matrix be equal to the row in the second matrix ");
+        return 0;
+    }
+    printf("\nEnter the element of first matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row1;i++){
+        for(j=0;j<col1;j++){
+            scanf("%d",&mat1[i][j]);
+        }
+    }
+    printf("\nEnter the element of second matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row2;i++){
+        for(j=0;j<col2;j++){
+            scanf("%d",&mat2[i][j]);
+        }
+    }
+    printf("\nElement of first matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row1;i++){
+        for(j=0;j<col1;j++){
+            printf("%d\t",mat1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nElement of second matrix");
+    printf("\n*******************************************\n");
+    for(i=0;i<row2;i++){
+        for(j=0;j<col2;j++){
+            printf("%d\t",mat2[i][j]);
+        }
+        printf("\n");
+    }
+   
+    //find the mul
+    for(i=0;i<row_mul;i++){
+        for(j=0;j<col_mul;j++){
+          mul[i][j]=0;
+          for(int k=0;k<col1;k++){
+              mul[i][j]+=mat1[i][k]*mat2[k][j];
+          }
+        }
+    }
+    printf("\nProduct of two matrix:\n");
+    printf("\n*******************************************\n");
+    for(i=0;i<row_mul;i++){
+        for(j=0;j<col_mul;j++){
+            printf("%d\t",mul[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
