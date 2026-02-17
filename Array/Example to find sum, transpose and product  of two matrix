@@ -1,0 +1,126 @@
+/*Write a menu diven prodram to read and display an m*n two matrix.Also find the sum,transpose,and product of two m*n matrices.*/
+#include<stdio.h>
+void read_matrix(int r,int c,int mat[r][c]);
+void sum_matrix(int r1,int c1,int r2,int c2,int mat1[r1][c1],int mat2[r2][c2]);
+void mul_matrix(int r1,int c1,int r2,int c2,int mat1[r1][c1],int mat2[r2][c2]);
+void transpose_matrix(int r,int c,int mat[r][c]);
+void display_matrix(int r,int c,int mat[r][c]);
+int main(){
+    int option,row1,col1,row2,col2;
+    
+    printf("Enter rows of first matrix: ");
+    scanf("%d",&row1);
+
+    printf("Enter columns of first matrix: ");
+    scanf("%d",&col1);
+
+    printf("Enter rows of second matrix: ");
+    scanf("%d",&row2);
+
+    printf("Enter columns of second matrix: ");
+    scanf("%d",&col2);
+    int mat1[row1][col1],mat2[row2][col2];
+    
+    do{
+        printf("\n******************Main Menu*******************");
+        printf("\n 1. Read the two matrix ");
+        printf("\n 2. Sum of two matrix ");
+        printf("\n 3. multiplication  of two matrix ");
+        printf("\n 4. Transpose of two matrix ");
+        printf("\n 5. Exit");
+        
+        printf("\n\n Enter your option: ");
+        scanf("%d",&option);
+        switch(option){
+            case 1:
+                printf("Enter the  elements of the first Matrix: \n");
+                read_matrix(row1,col1,mat1);
+                printf("Enter the  elements of the second Matrix:\n ");
+                read_matrix(row2,col2,mat2);
+                break;
+            case 2:
+                printf("Sum of two matrix : \n");
+                sum_matrix(row1,col1,row2,col2,mat1,mat2);
+                break;
+            case 3:
+                mul_matrix(row1,col1,row2,col2,mat1,mat2);
+                break;
+            case 4:
+                printf("transpose the first matrix: \n");
+                transpose_matrix(row1,col1,mat1);
+                printf("transpose the second matrix: \n");
+                transpose_matrix(row2,col2,mat2);
+                break;
+        }
+    }while(option!=5);
+        
+    return 0;
+}  
+
+
+void read_matrix(int r,int c,int mat[r][c]){
+    static int num=1;
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("\nmat%d[%d][%d]: ",num,i,j);
+            scanf("%d",&mat[i][j]);
+        }
+    }
+    num++;
+}
+
+
+
+void sum_matrix(int r1,int c1,int r2,int c2,int mat1[r1][c1],int mat2[r2][c2]){
+    if(r1 !=r2 || c1 !=c2){
+        printf("\n The number of rows and columns of both matrices must be equal");
+        return;
+    }
+    int sum[r1][c1];
+    for(int i=0;i<r1;i++){
+        for(int j=0;j<c1;j++){
+            sum[i][j]=mat1[i][j]+mat2[i][j];
+            printf("%d\t",sum[i][j]);
+        }
+        printf("\n");
+ }
+}
+
+
+
+void mul_matrix(int r1,int c1,int r2,int c2,int mat1[r1][c1],int mat2[r2][c2]){
+    if(c1!=r2){
+        printf("\n The number of columns in the first matrix must be equal to the number of rows in the second matrix ");
+        return;
+    }
+    int mul[r1][c2];
+    for(int i=0;i<r1;i++){
+        for(int j=0;j<c2;j++){
+            mul[i][j]=0;
+            for(int k=0;k<c1;k++){
+                mul[i][j]+=mat1[i][k]*mat2[k][j];
+            }
+            printf("%d\t",mul[i][j]);
+        }
+        printf("\n");
+    }
+}
+void transpose_matrix(int r,int c,int mat[r][c]){
+    for(int i=0;i<c;i++){
+        for(int j=0;j<r;j++){
+            printf("%d\t",mat[j][i]);
+        }
+        printf("\n");
+ }
+}
+
+
+
+void display_matrix(int r,int c,int mat[r][c]){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("%d\t",mat[i][j]);
+        }
+        printf("\n");
+ }
+}
