@@ -1,0 +1,62 @@
+/*In a class there are 10 students.Each student is supposed to appear in 3 test .Write a program using twi-dimensional arrays to print
+1(The markes obtained by each student in different subject
+2)Total marks and average obtained by each student
+3)Store the average of each student in a separate 1D array so that it can be used to calculate the class average */
+#include<stdio.h> 
+int main(){ 
+    int num_stu,num_sub,Each_stu_marks_total; 
+    float Ave_marks_each_stu=0.0,Ave_marks_inClass=0.0;
+    printf("Enter the number of student in class: "); 
+    scanf("%d",&num_stu); 
+    if(num_stu<=0){
+        printf("Invalid input(Enter the No of student)");
+        return 0;
+    }
+    printf("Enter the num of subject: "); 
+    scanf("%d",&num_sub); 
+    if(num_sub<=0){
+        printf("Invalid input(Enter the No of subject)");
+        return 0;
+    }
+    int stu[num_stu][num_sub];
+    float avr_stu_marks[num_stu];
+    char sub_name[num_sub]; 
+    
+    printf("\nEnter the Subjects of the student: \n"); 
+    for(int i=0;i<num_sub;i++){ 
+        printf("Enter the %dth subject name : ",i+1); 
+        scanf(" %c",&sub_name[i]); 
+        
+    }
+    printf("\nEnter the marks of the student: \n"); 
+    for(int i=0;i<num_stu;i++){
+        printf("Enter the %dth student marks: \n",i+1); 
+        for(int j=0;j<num_sub;j++){
+            printf("%c: ",sub_name[j]); 
+            scanf("%d",&stu[i][j]); 
+            
+        } 
+        
+    } 
+    
+    //Marks obtained by each student in different subject ,average marks,total marks
+    printf("\nMarks of the student: ");
+    for(int i=0;i<num_stu;i++){ 
+        printf("\n%dth student marks: ",i+1); 
+        Each_stu_marks_total=0;
+        for(int j=0;j<num_sub;j++){ 
+            printf(" %c: %d",sub_name[j],stu[i][j]); 
+            Each_stu_marks_total+=stu[i][j];
+            } 
+        Ave_marks_each_stu=(float)Each_stu_marks_total/num_sub;
+        printf("\t\tTotal Marks=%d ",Each_stu_marks_total);
+        printf("\t\tAverage Mark=%0.2f ",Ave_marks_each_stu);
+        avr_stu_marks[i]=Ave_marks_each_stu;
+    } 
+   //find the average marks in class
+   for(int i=0;i<num_stu;i++){
+       Ave_marks_inClass+=avr_stu_marks[i];
+   }
+    printf("\nAverage marks in class: %.2f",Ave_marks_inClass/num_stu);
+    return 0;
+}
