@@ -1,0 +1,42 @@
+/*reating a square matrix and setting:
+
+Top-right corner → -1
+
+Bottom-left corner → 1
+
+All other elements → 0
+*/
+#include<stdio.h>
+void read_matrices(int r,int c,int mat[r][c]);
+void display_matrices(int r,int c,int mat[r][c]);
+int main(){
+    int row,col;
+    printf("Enter the number of rows and columns of the matrix: ");
+    scanf("%d",&row);
+    col=row;
+    int mat[row][col];
+    read_matrices(row,col,mat);
+    display_matrices(row,col,mat);
+    return 0;
+}
+void read_matrices(int r,int c,int mat[r][c]){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            if(i==0 && j==c-1){
+                mat[i][j]=-1;
+            }else if(i==r-1 && j==0){
+                mat[i][j]=1;
+            }else{
+                mat[i][j]=0;
+            }
+        }
+    }
+}
+void display_matrices(int r,int c,int mat[r][c]){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("%d\t",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
