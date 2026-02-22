@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    char str[]="Introduction to C";
+    printf("\n|%s|",str);
+    printf("\n|%20s|",str);
+    printf("\n|%-20s|",str);
+    printf("\n|%.10s|",str);
+    printf("\n|%20.10s|",str);
+    printf("\n|%-20.10s|",str);
+    return 0;
+}
