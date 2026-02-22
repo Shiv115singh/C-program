@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    char str[]="HELLO";
+    for(int i=0;i<(sizeof(str))-1;i++){
+        printf("%-5.*s\n",i+1,str);
+    }
+    for(int i=(sizeof(str))-2;i>=0;i--){
+        printf("%-5.*s\n",i+1,str);
+    }
+    return 0;
+}
