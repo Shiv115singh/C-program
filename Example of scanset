@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main(){
+    char str[10];
+    printf("\n Enter string: ");
+    scanf("%[A-Z]",str);
+    printf("The string is : %s",str);
+    return 0;
+}
