@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    char str[100],change_case[100];
+    printf("Enter the string:");
+    fgets(str,sizeof(str),stdin);
+    for(int i=0;i<sizeof(str)-1;i++){
+        if(str[i]>='a' && str[i]<='z'){
+            change_case[i]=str[i]-32;
+        }else if(str[i]>='A' && str[i]<='Z'){
+            change_case[i]=str[i]+32;
+        }else{
+            change_case[i]=str[i];
+        }
+    }
+    printf("Change case string = %s",change_case);
+    return 0;
+}
