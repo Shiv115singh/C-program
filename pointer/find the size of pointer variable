@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+    int *pnum;
+    char *pch;
+    float *pfnum;
+    double *pdnum;
+    long *plnum;
+    printf("\n The size of integer pointer is: %d",sizeof(pnum));
+    printf("\n The size of character pointer is: %d",sizeof(pch));
+    printf("\n The size of floating point pointer number is: %d",sizeof(pfnum));
+    printf("\n The size of double pointer number is: %d",sizeof(pdnum));
+    printf("size of long pointer %d",sizeof(plnum));
+    return 0;
+}
